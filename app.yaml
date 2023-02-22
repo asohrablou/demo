@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+spec:
+  selector:
+    matchLabels:
+      app: python_app
+  replicas: 1 # tells deployment to run 4 pods matching the template
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: python_app
+    spec:
+      containers:
+      - name: python-app
+        image: harbor.farakav.co/app/python-demo:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: harbor-registry
