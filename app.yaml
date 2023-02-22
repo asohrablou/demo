@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: python_app
-  replicas: 1 # tells deployment to run 4 pods matching the template
+  replicas: 1 # tells deployment to run 1 pods matching the template
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
