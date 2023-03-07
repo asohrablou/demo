@@ -14,4 +14,4 @@ spec:
             name: python-service
             port:
               name: http
-    host: app.farakav.inf
+    host: app.example.com
