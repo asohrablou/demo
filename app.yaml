@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: harbor.farakav.co/app/python-demo:latest
+        image: harbor.example.com/app/python-demo:latest
         ports:
         - containerPort: 80
       imagePullSecrets:
